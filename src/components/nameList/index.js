@@ -6,20 +6,6 @@ import data from '../utils/data.json'
 
 class List extends React.Component {
 
-    // constructor(props){
-    //     super(props)
-
-    //     this.state = {
-    //         value: 0
-    //     }
-    // }
-
-    // handleClick(k) {
-    //     this.setState(
-    //         value: this.state.value + k
-    //     })
-    // }
-
     render() {
         return (
             <ul className="List-block">
