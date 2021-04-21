@@ -15,6 +15,13 @@ class App extends React.Component {
         this.addNameBottom = this.addNameBottom.bind(this);
         this.addNameTop = this.addNameTop.bind(this);
     }
+
+    componentDidMount() {
+        console.log('componentDidMount!');
+        fetch('https://jsonplaceholder.typicode.com/todos')
+            .then(data => data.json())
+            .then(data => this.setState({ data }))
+    }
      
     addNameBottom() {
         this.setState({
@@ -22,7 +29,7 @@ class App extends React.Component {
                 ...this.state.data,
                 {
                     id: v4(),
-                    name: faker.name.findName()
+                    title: faker.name.findName()
                 }
             ]
         })
@@ -33,7 +40,7 @@ class App extends React.Component {
             data: [
                 {
                     id: v4(),
-                    name: faker.name.findName()
+                    title: faker.name.findName()
                 },
                 ...this.state.data
             ]
@@ -41,6 +48,7 @@ class App extends React.Component {
     }
 
     render() {
+        console.log('render App!');
         return (
             <div className="App">
                 <h1>Список случайных имён: </h1>
